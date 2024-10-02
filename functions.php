@@ -1,6 +1,5 @@
 <?php
 
-/* Función comprobar si el numero del carton ha sido eliminado */
 function eliminarNumero(&$jugadores, $numeroAEliminar, &$aciertosBingo, $indice)
 {
     $nombreJugador = "Jugador ";
@@ -22,7 +21,6 @@ function eliminarNumero(&$jugadores, $numeroAEliminar, &$aciertosBingo, $indice)
     }
 }
 
-/* Comprobar que carton es el ganador */
 function comprobarBingo(&$aciertosBingo, $numJugadores)
 {
     $devueto = array();
@@ -30,7 +28,8 @@ function comprobarBingo(&$aciertosBingo, $numJugadores)
     
     foreach ($aciertosBingo as $jugador => &$carton) 
     {
-        for ($i=0; $i < count($carton); $i++) { 
+        for ($i=0; $i < count($carton); $i++)
+        { 
             if (isset($carton[$i]) && $carton[$i] == 15)
             {
                 $hayBingo = true;
@@ -44,7 +43,6 @@ function comprobarBingo(&$aciertosBingo, $numJugadores)
         return -1;
 }
 
-/* Funcion para mostrar las bolas */
 function mostrarBolas($numerosEliminados)
 {
     echo "<b  style=\"padding-left:31vw;\" >BOLAS QUE HAN SALIDO </b><br/>";
@@ -55,9 +53,6 @@ function mostrarBolas($numerosEliminados)
     echo "</div>";
 }
 
-
-
-/* Función auxiliar para imprimir casillas con o sin estilo de fondo rojo */
 function imprimirCasilla($numero)
 {
     $linea = "";
@@ -71,7 +66,6 @@ function imprimirCasilla($numero)
     return $linea;
 }
 
-/* Funcion para imprimir todos los cartones */ 
 function mostrarCartones($numJugadores, $jug, $cartonesPorJugador)
 {
     echo "<div style='float:left;padding-left:1vw;'>";
@@ -122,7 +116,6 @@ function mostrarCartones($numJugadores, $jug, $cartonesPorJugador)
     }
     echo "</div>";
 }
-
 
 function saberGanadores(&$ganadores, $cartonesPorJugador)
 {
