@@ -22,9 +22,9 @@ for ($i = 1; $i <= $numJugadores; $i++) {
 }
 
 // Creación de los cartones de cada jugador 
-for ($z=1; $z <= $numJugadores ; $z++)
+for ($j = 1; $j <= $numJugadores ; $j++)
 { 
-    $jugadorActual = &${$nombreJugador.$z};
+    $jugadorActual = &${$nombreJugador.$j};
 
     foreach($jugadorActual as $jugador => &$cartones)
     {
@@ -104,7 +104,7 @@ while ($hayBingo == false)
     for ($j = 1; $j <= $numJugadores; $j++) {
         eliminarNumero(${$nombreJugador.$j}, $numerosEliminados[0], $aciertosBingo);
     }
-    array_push($arrayImpresionBolas, $numerosEliminados[0] );
+    array_push($arrayImpresionBolas, $numerosEliminados[0]);
     array_shift($numerosEliminados);
 
     // Comprobamos si hay Bingo
